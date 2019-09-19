@@ -1,0 +1,69 @@
+Start: 1:25
+
+- add bootstrap Navbar (selected item is active)
+use Navbar tag
+	Vidly (root goes to Movies)
+	Movies
+	Customers
+	Rentals
+
+- create components that just show <h1>
+	Customers
+	Rentals
+	notfound
+
+- modify moviesTable so that movie.name is a link that goes to MovieForm component
+
+- create MovieForm component
+	display the movie._id that is passes as a URL parameter
+	add Save button that redirects to Movies
+
+The way Mosh did it
+SETUP WORKSPACE AN APP
+-installed react-router-dom
+	
+-wrapped <App /> in <BrowserRouter> in index.js
+	import BrowserRouter from react-router-dom
+
+GET THE BASICS WORKING FIRST
+- create basic components
+	customers
+	movieForm
+	notFound
+	rentals
+
+REGISTER ROUTING
+- registered routes in App.js
+	import Route and Redirect and Switch from rrd
+	added <Route path= component=> for all of the components
+	added <redirect from root to /movies with exact attribute
+	wrapped all Route and Redirect in a Switch
+	added redirect to not-found for all other urls
+	
+ADD NAVIGATION BAR
+	imported Link and NavLink from rrd
+	created navBar component
+	copied template from bootstrap documentation
+	replaced all <a> with <Navlink>
+	replace all href with to
+	replace all class with className
+	renamed menu links to point to the appropriate routing e.g. Movies to /movies
+	added NavBar to app.js, at top and wrapped all in a React.Fragment
+
+LINK TO THE MOVIE FORM
+- in moviesTable
+	added content attribute to the title column using Link
+	linked to MovieForm using query string
+	imported Link from rrd
+-in App.js
+	added a new routing to /movies/:id
+-in movieForm
+	deconstruct match and history in params
+	use match to display id
+	add Save button. onClick target usese history.push
+	
+	
+
+
+
+
