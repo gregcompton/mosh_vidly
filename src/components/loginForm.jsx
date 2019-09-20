@@ -25,8 +25,7 @@ class LoginForm extends Component {
     e.preventDefault();
 
     const errors = this.validate();
-    console.log(errors);
-    this.setState({ errors });
+    this.setState({ errors: errors || {} }); // ensure that errors object is not null if there are no errors.
     if (errors) return;
 
     //Call the server etc.
